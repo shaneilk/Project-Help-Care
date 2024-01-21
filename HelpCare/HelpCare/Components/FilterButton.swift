@@ -16,10 +16,11 @@ struct FilterButton: View {
         VStack {
             Image(systemName: icon)
                 .font(.title)
-                .foregroundColor(Color(.systemBlue).opacity(0.80))
+                .foregroundColor(Color(selected ? .systemBlue : .systemGray).opacity(0.80))
             Text(description)
                 .fontWeight(.medium)
                 .font(.callout)
+                .foregroundColor(Color(selected ? .systemBlue : .black))
                 .padding(.top, 4)
                 .padding([.leading, .trailing])
         }
@@ -28,13 +29,10 @@ struct FilterButton: View {
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20).stroke(Color.blue, lineWidth: 4)
-                )
+                .shadow(color: Color(.systemGray), radius: 3, x:1, y:2)
         )
     }
 }
-
 struct FilterButton_Previews: PreviewProvider {
     static var previews: some View {
         FilterButton(icon: "circle", description: "testing", selected: .constant(true))

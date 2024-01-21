@@ -20,6 +20,7 @@
 		016A8BB62B5CB81C00BBD070 /* ProcedureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB52B5CB81C00BBD070 /* ProcedureView.swift */; };
 		016A8BB82B5CB83B00BBD070 /* SpecialistSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB72B5CB83B00BBD070 /* SpecialistSearchView.swift */; };
 		016A8BBA2B5CE34C00BBD070 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB92B5CE34C00BBD070 /* FilterButton.swift */; };
+		016A8BBC2B5D10D800BBD070 /* ProcedureResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BBB2B5D10D800BBD070 /* ProcedureResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		016A8BB52B5CB81C00BBD070 /* ProcedureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureView.swift; sourceTree = "<group>"; };
 		016A8BB72B5CB83B00BBD070 /* SpecialistSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistSearchView.swift; sourceTree = "<group>"; };
 		016A8BB92B5CE34C00BBD070 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		016A8BBB2B5D10D800BBD070 /* ProcedureResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +71,11 @@
 		016A8B982B5C81BA00BBD070 /* HelpCare */ = {
 			isa = PBXGroup;
 			children = (
+				016A8BBD2B5D10E200BBD070 /* Procedures */,
 				016A8BB02B5CA5D700BBD070 /* Models */,
 				016A8BA72B5C821D00BBD070 /* Components */,
 				016A8B992B5C81BA00BBD070 /* HelpCareApp.swift */,
 				016A8B9B2B5C81BA00BBD070 /* ContentView.swift */,
-				016A8BB52B5CB81C00BBD070 /* ProcedureView.swift */,
 				016A8BB72B5CB83B00BBD070 /* SpecialistSearchView.swift */,
 				016A8B9D2B5C81BB00BBD070 /* Assets.xcassets */,
 				016A8B9F2B5C81BB00BBD070 /* Preview Content */,
@@ -108,6 +110,15 @@
 				016A8BB12B5CA5E100BBD070 /* Hospital.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		016A8BBD2B5D10E200BBD070 /* Procedures */ = {
+			isa = PBXGroup;
+			children = (
+				016A8BB52B5CB81C00BBD070 /* ProcedureView.swift */,
+				016A8BBB2B5D10D800BBD070 /* ProcedureResultView.swift */,
+			);
+			path = Procedures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 				016A8BBA2B5CE34C00BBD070 /* FilterButton.swift in Sources */,
 				016A8BB62B5CB81C00BBD070 /* ProcedureView.swift in Sources */,
 				016A8BAF2B5C995800BBD070 /* IconText.swift in Sources */,
+				016A8BBC2B5D10D800BBD070 /* ProcedureResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
