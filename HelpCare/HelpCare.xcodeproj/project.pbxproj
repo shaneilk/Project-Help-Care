@@ -16,6 +16,7 @@
 		016A8BAD2B5C91AA00BBD070 /* HospitalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BAC2B5C91AA00BBD070 /* HospitalCell.swift */; };
 		016A8BAF2B5C995800BBD070 /* IconText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BAE2B5C995800BBD070 /* IconText.swift */; };
 		016A8BB22B5CA5E100BBD070 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB12B5CA5E100BBD070 /* Hospital.swift */; };
+		016A8BB42B5CB13000BBD070 /* SheetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB32B5CB13000BBD070 /* SheetButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		016A8BAC2B5C91AA00BBD070 /* HospitalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalCell.swift; sourceTree = "<group>"; };
 		016A8BAE2B5C995800BBD070 /* IconText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconText.swift; sourceTree = "<group>"; };
 		016A8BB12B5CA5E100BBD070 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		016A8BB32B5CB13000BBD070 /* SheetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				016A8BAA2B5C87A600BBD070 /* sample.swift */,
 				016A8BAC2B5C91AA00BBD070 /* HospitalCell.swift */,
 				016A8BAE2B5C995800BBD070 /* IconText.swift */,
+				016A8BB32B5CB13000BBD070 /* SheetButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				016A8BB22B5CA5E100BBD070 /* Hospital.swift in Sources */,
+				016A8BB42B5CB13000BBD070 /* SheetButton.swift in Sources */,
 				016A8B9C2B5C81BA00BBD070 /* ContentView.swift in Sources */,
 				016A8BAB2B5C87A600BBD070 /* sample.swift in Sources */,
 				016A8BA92B5C86C700BBD070 /* PersistentSheet.swift in Sources */,

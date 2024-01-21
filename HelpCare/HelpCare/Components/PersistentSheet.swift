@@ -16,13 +16,22 @@ struct PersistentSheet: View {
         ScrollView{
             VStack {
                 HStack {
-                    Text("Welcome")
+                    Text("Good Afternoon")
                         .padding([.leading, .trailing, .bottom])
                         .padding(.top, 32)
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     Spacer()
+                }
+                
+                HStack {
+                    SheetButton(icon: "list.clipboard.fill", description: "Search by Procedure")
+                        .padding()
+                        .padding(.leading, 8)
+                    SheetButton(icon: "person.text.rectangle.fill", description: "Search by Specialist")
+                        .padding()
+                        .padding(.trailing, 8)
                 }
                 
                 ForEach(sampleData) { hospital in
