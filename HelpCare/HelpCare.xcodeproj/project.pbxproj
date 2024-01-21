@@ -21,6 +21,7 @@
 		016A8BB82B5CB83B00BBD070 /* SpecialistSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB72B5CB83B00BBD070 /* SpecialistSearchView.swift */; };
 		016A8BBA2B5CE34C00BBD070 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB92B5CE34C00BBD070 /* FilterButton.swift */; };
 		016A8BBC2B5D10D800BBD070 /* ProcedureResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BBB2B5D10D800BBD070 /* ProcedureResultView.swift */; };
+		016A8BBF2B5D83B800BBD070 /* HospitalRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BBE2B5D83B800BBD070 /* HospitalRegion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		016A8BB72B5CB83B00BBD070 /* SpecialistSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistSearchView.swift; sourceTree = "<group>"; };
 		016A8BB92B5CE34C00BBD070 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		016A8BBB2B5D10D800BBD070 /* ProcedureResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureResultView.swift; sourceTree = "<group>"; };
+		016A8BBE2B5D83B800BBD070 /* HospitalRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalRegion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				016A8BB12B5CA5E100BBD070 /* Hospital.swift */,
+				016A8BBE2B5D83B800BBD070 /* HospitalRegion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				016A8BAD2B5C91AA00BBD070 /* HospitalCell.swift in Sources */,
 				016A8B9A2B5C81BA00BBD070 /* HelpCareApp.swift in Sources */,
 				016A8BBA2B5CE34C00BBD070 /* FilterButton.swift in Sources */,
+				016A8BBF2B5D83B800BBD070 /* HospitalRegion.swift in Sources */,
 				016A8BB62B5CB81C00BBD070 /* ProcedureView.swift in Sources */,
 				016A8BAF2B5C995800BBD070 /* IconText.swift in Sources */,
 				016A8BBC2B5D10D800BBD070 /* ProcedureResultView.swift in Sources */,
