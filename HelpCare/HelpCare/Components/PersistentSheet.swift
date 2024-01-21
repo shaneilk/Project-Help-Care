@@ -13,7 +13,7 @@ struct PersistentSheet: View {
     @Binding var selectedHospital: Hospital?
     
     var body: some View {
-        ScrollView{
+        ScrollView {
             VStack {
                 HStack {
                     Text("Good Afternoon")
@@ -26,12 +26,23 @@ struct PersistentSheet: View {
                 }
                 
                 HStack {
-                    SheetButton(icon: "list.clipboard.fill", description: "Search by Procedure")
-                        .padding()
-                        .padding(.leading, 8)
-                    SheetButton(icon: "person.text.rectangle.fill", description: "Search by Specialist")
-                        .padding()
-                        .padding(.trailing, 8)
+                    NavigationLink {
+                        ProcedureView()
+                            .navigationTitle("Testing")
+                    } label: {
+                        SheetButton(icon: "list.clipboard.fill", description: "Search by Procedure")
+                            .padding()
+                            .padding(.leading, 8)
+                    }
+                    
+                    NavigationLink {
+                        SpecialistSearchView()
+                            .navigationTitle("Search by Specialist")
+                    } label: {
+                        SheetButton(icon: "person.text.rectangle.fill", description: "Search by Specialist")
+                            .padding()
+                            .padding(.trailing, 8)
+                    }
                 }
                 
                 ForEach(sampleData) { hospital in
@@ -48,7 +59,7 @@ struct PersistentSheet: View {
         .background(
             RoundedRectangle(cornerRadius: 30)
                 .fill(Color(.systemGray2).opacity(0.60))
-        )
+    )
     }
 }
 

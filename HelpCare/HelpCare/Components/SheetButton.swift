@@ -17,7 +17,7 @@ struct SheetButton: View {
         VStack {
             Image(systemName: icon)
                 .font(.title)
-                .foregroundColor(Color(.systemBlue))
+                .foregroundColor(Color(.systemGray))
             Text(description)
                 .fontWeight(.medium)
                 .font(.callout)

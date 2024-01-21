@@ -12,7 +12,6 @@ enum mapDefaults{
     static let defaultLocation = CLLocationCoordinate2D(latitude: 49.261374, longitude: -123.246940)
     static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
     
-    // zoom in 0.005
 }
 
 struct ContentView: View {
@@ -28,23 +27,26 @@ struct ContentView: View {
                       Hospital(name: "Langley Memorial Hospital", address: "22051 Fraser Hwy, Langley Twp, BC V3A 4H4", status: false, latitude: 49.095417, longitude: -122.615070, waitTime: "2:40", lengthOfStay: "4:27")]
     
     var body: some View {
-        ZStack {
-            Map(coordinateRegion: $defaultRegion,
-                annotationItems: sampleData,
-                annotationContent: { hospital in
-                MapMarker(coordinate: CLLocationCoordinate2D(latitude: hospital.latitude, longitude: hospital.longitude))
-            })
-                .ignoresSafeArea()
-                .onChange(of: selectedHospital) { newHospital in
-                    withAnimation {
-                        defaultRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: newHospital?.latitude ?? mapDefaults.defaultLocation.latitude, longitude: newHospital?.longitude ?? mapDefaults.defaultLocation.longitude), span: mapDefaults.defaultSpan)
+        NavigationStack {
+            ZStack {
+                Map(coordinateRegion: $defaultRegion,
+                    showsUserLocation: true,
+                    annotationItems: sampleData,
+                    annotationContent: { hospital in
+                    MapMarker(coordinate: CLLocationCoordinate2D(latitude: hospital.latitude, longitude: hospital.longitude))
+                })
+                    .ignoresSafeArea()
+                    .onChange(of: selectedHospital) { newHospital in
+                        withAnimation {
+                            defaultRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: newHospital?.latitude ?? mapDefaults.defaultLocation.latitude, longitude: newHospital?.longitude ?? mapDefaults.defaultLocation.longitude), span: mapDefaults.defaultSpan)
+                        }
                     }
+                VStack {
+                    Spacer()
+                    PersistentSheet(sampleData: sampleData, selectedHospital: $selectedHospital)
                 }
-            VStack {
-                Spacer()
-                PersistentSheet(sampleData: sampleData, selectedHospital: $selectedHospital)
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
         }
     }
 }
