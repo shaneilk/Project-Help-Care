@@ -1,5 +1,5 @@
 //
-//  SheetButton.swift
+//  FilterButton.swift
 //  HelpCare
 //
 //  Created by Joseph Nevado on 2024-01-20.
@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-// person.text.rectangle.fill
-
-struct SheetButton: View {
+struct FilterButton: View {
     @State var icon: String
     @State var description: String
+    @Binding var selected: Bool
     
     var body: some View {
         VStack {
@@ -29,16 +28,15 @@ struct SheetButton: View {
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20).stroke(Color.blue, lineWidth: 4)
+                )
         )
     }
 }
 
-struct SheetButton_Previews: PreviewProvider {
+struct FilterButton_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            Color(.systemGray2)
-                .ignoresSafeArea()
-            SheetButton(icon: "person.text.rectangle.fill", description: "testing")
-        }
+        FilterButton(icon: "circle", description: "testing", selected: .constant(true))
     }
 }

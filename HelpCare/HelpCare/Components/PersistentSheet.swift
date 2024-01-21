@@ -14,9 +14,9 @@ struct PersistentSheet: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(alignment: .leading){
                 HStack {
-                    Text("Good Afternoon")
+                    Text("Welcome")
                         .padding([.leading, .trailing, .bottom])
                         .padding(.top, 32)
                         .font(.title)
@@ -25,25 +25,33 @@ struct PersistentSheet: View {
                     Spacer()
                 }
                 
+                Text("Surgery wait times")
+                    .padding(.leading)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
                 HStack {
                     NavigationLink {
                         ProcedureView()
-                            .navigationTitle("Testing")
+                            .navigationTitle("Search by Procedure")
                     } label: {
-                        SheetButton(icon: "list.clipboard.fill", description: "Search by Procedure")
-                            .padding()
-                            .padding(.leading, 8)
+                        SheetButton(icon: "list.clipboard.fill", description: "By Procedure")
+                            .padding([.leading], 32)
                     }
                     
                     NavigationLink {
                         SpecialistSearchView()
                             .navigationTitle("Search by Specialist")
                     } label: {
-                        SheetButton(icon: "person.text.rectangle.fill", description: "Search by Specialist")
-                            .padding()
-                            .padding(.trailing, 8)
+                        SheetButton(icon: "person.text.rectangle.fill", description: "By Specialist")
+                            .padding(.leading, 16)
                     }
                 }
+                
+                Text("Hospital wait times")
+                    .padding(.leading)
+                    .padding(.top)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
                 
                 ForEach(sampleData) { hospital in
                     HospitalCell(hospitalName: hospital.name, status: hospital.status, address: hospital.address, waitTime: hospital.waitTime, lengthOfStay: hospital.lengthOfStay)
