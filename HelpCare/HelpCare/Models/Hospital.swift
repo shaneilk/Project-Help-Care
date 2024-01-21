@@ -14,5 +14,8 @@ struct Hospital: Identifiable, Equatable {
     var latitude: Double
     var longitude: Double
     
+    var waitTime: String
+    var lengthOfStay: String
+    
     var id = UUID()
 }

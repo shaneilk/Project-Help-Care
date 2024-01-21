@@ -11,6 +11,9 @@ struct HospitalCell: View {
     @State var hospitalName: String
     @State var status: Bool
     @State var address: String
+    @State var waitTime: String
+    @State var lengthOfStay: String
+    
     
     var body: some View {
         VStack(alignment: .leading){
@@ -27,13 +30,13 @@ struct HospitalCell: View {
                     .font(.title3)
                     .foregroundColor(.yellow)
                     .padding(.leading)
-                Text("3:07")
+                Text(waitTime)
                     .fontWeight(.medium)
                 Image(systemName: "hourglass.bottomhalf.filled")
                     .font(.title3)
                     .foregroundColor(.yellow)
                     .padding(.leading)
-                Text("5:35")
+                Text(lengthOfStay)
                     .fontWeight(.medium)
                 Spacer()
             }
@@ -52,7 +55,7 @@ struct HospitalCell_Previews: PreviewProvider {
         ZStack {
             Color(.systemGray2)
                 .ignoresSafeArea()
-            HospitalCell(hospitalName: "hs2", status: true, address: "sample address")
+            HospitalCell(hospitalName: "hs2", status: true, address: "sample address", waitTime: "3:07", lengthOfStay: "5:35")
         }
     }
 }
