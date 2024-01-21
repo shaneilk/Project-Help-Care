@@ -21,6 +21,7 @@ struct IconText: View {
                 .fontWeight(.semibold)
             Spacer()
         }
+        .padding(.top, 2)
     }
 }
 

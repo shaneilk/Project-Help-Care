@@ -16,9 +16,11 @@ struct HospitalCell: View {
         VStack(alignment: .leading){
             IconText(displayText: hospitalName, status: status)
             Text(address)
+                .font(.callout)
                 .fontWeight(.medium)
                 .foregroundColor(.secondary)
-                .padding(.leading, 20)
+                .padding(.leading, 18)
+                .padding(.trailing)
                 .padding(.bottom, 2)
             HStack {
                 Image(systemName: "clock.fill")
