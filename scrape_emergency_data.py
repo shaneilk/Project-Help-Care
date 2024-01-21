@@ -1,3 +1,4 @@
+import json
 from bs4 import BeautifulSoup
 from emergency_data import EmergencyData
 from selenium.webdriver import Chrome
@@ -24,27 +25,35 @@ def create_emergency_data_object(row):
     length_of_stay = get_length_of_stay_time(row)
     return EmergencyData(hospital_name, wait_time, length_of_stay)
 
-# URL to scrape
-url = 'http://www.edwaittimes.ca/WaitTimes.aspx'
 
-chrome_options = Options()  
-chrome_options.add_argument("--headless")
+def get_emergency_data():
+    # URL to scrape
+    url = 'http://www.edwaittimes.ca/WaitTimes.aspx'
 
-# Send a GET request to the URL
-with Chrome(options=chrome_options) as browser:
-    browser.get(url)
-    html = browser.page_source
+    chrome_options = Options()  
+    chrome_options.add_argument("--headless")
 
-    soup = BeautifulSoup(html, 'html.parser')
+    # Send a GET request to the URL
+    with Chrome(options=chrome_options) as browser:
+        browser.get(url)
+        html = browser.page_source
 
-    # Extract information from the page
-    hospital_data = []
-    for tag in soup.find_all('a'):
-        # print(tag)
-        for div in tag.find_all('div', {'class': 'TableW'}):
-            for row in div.find_all('div', {'class': 'Row'}):
-                hospital_data.append(create_emergency_data_object(row))
-    
-    for item in hospital_data:
-        print(item.length_of_stay)
+        soup = BeautifulSoup(html, 'html.parser')
 
+        # Extract information from the page
+        hospital_data = []
+        for tag in soup.find_all('a'):
+            for div in tag.find_all('div', {'class': 'TableW'}):
+                for row in div.find_all('div', {'class': 'Row'}):
+                    hospital_data.append(json.dumps(create_emergency_data_object(row).__dict__))
+
+        print(hospital_data)
+        return hospital_data
+
+
+if __name__ == '__main__':
+    get_emergency_data()
+        
+        # for item in hospital_data:
+        #     print(item.name, item.length_of_stay, item.length_of_stay)
+                    
