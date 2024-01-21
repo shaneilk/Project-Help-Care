@@ -53,7 +53,4 @@ def get_emergency_data():
 
 if __name__ == '__main__':
     get_emergency_data()
-        
-        # for item in hospital_data:
-        #     print(item.name, item.length_of_stay, item.length_of_stay)
                     
