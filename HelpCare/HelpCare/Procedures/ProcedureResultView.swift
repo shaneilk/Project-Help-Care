@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-// Procedure Name -> Total cases waiting; 50% of cases completed within; 90% of cases completed within
-// Hospital Name -> same stats
-// Specialist Name -> same stats
-
-// Section by Hospital
-
-// Fraser Health & Vancouver Coastal Health
-
 struct ProcedureResultView: View {
     // Fraser Health
     var fraserHealth = HospitalRegion(regionName: "Fraser Health", hospitals: [ProcedureHospital(hospitalName: "Surrey Memorial Hospital", casesWaiting: 18, fiftyPercentile: 5.1, ninetyPercentile: 20.2, specialists: [Specialist(firstName: "Marin", lastName: "Aidelbaum", surgeonId: 132679, casesWaiting: 8), Specialist(firstName: "Donald Willis", lastName: "Anderson", surgeonId: 132218, casesWaiting: 5), Specialist(firstName: "Gerald", lastName: "Wittenberg", surgeonId: 132661, casesWaiting: 5, fiftyPercentile: 4.6, ninetyPercentile: 7.5)]),
@@ -67,6 +59,7 @@ struct ProcedureResultView: View {
                             .padding(.leading)
                             .padding(.top)
                             .fontWeight(.semibold)
+                            .font(.title3)
                         ForEach(hospital.specialists) { specialist in
                             FilterButton(specialist: specialist.firstName + " " + specialist.lastName, casesWaiting: specialist.casesWaiting < 5 ? "< 5" : String(specialist.casesWaiting), fiftyPercentile: String(specialist.fiftyPercentile ?? 0), ninetyPercentile: String(specialist.ninetyPercentile ?? 0))
                                 .padding()
@@ -92,6 +85,7 @@ struct ProcedureResultView: View {
                             .padding(.leading)
                             .padding(.top)
                             .fontWeight(.semibold)
+                            .font(.title3)
                         ForEach(hospital.specialists) { specialist in
                             FilterButton(specialist: specialist.firstName + " " + specialist.lastName, casesWaiting: specialist.casesWaiting < 5 ? "< 5" : String(specialist.casesWaiting), fiftyPercentile: String(specialist.fiftyPercentile ?? 0), ninetyPercentile: String(specialist.ninetyPercentile ?? 0))
                                 .padding()
