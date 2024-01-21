@@ -123,6 +123,7 @@ struct ProcedureView: View {
                 Section {
                     NavigationLink {
                         ProcedureResultView()
+                            .navigationTitle(selectedHeadArea)
                     } label: {
                         Text("Search")
                             .foregroundColor(Color(.systemBlue))

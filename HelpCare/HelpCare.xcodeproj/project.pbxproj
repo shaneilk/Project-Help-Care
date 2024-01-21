@@ -22,6 +22,7 @@
 		016A8BBA2B5CE34C00BBD070 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BB92B5CE34C00BBD070 /* FilterButton.swift */; };
 		016A8BBC2B5D10D800BBD070 /* ProcedureResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BBB2B5D10D800BBD070 /* ProcedureResultView.swift */; };
 		016A8BBF2B5D83B800BBD070 /* HospitalRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BBE2B5D83B800BBD070 /* HospitalRegion.swift */; };
+		016A8BC12B5D8FFC00BBD070 /* InformationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8BC02B5D8FFC00BBD070 /* InformationLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		016A8BB92B5CE34C00BBD070 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		016A8BBB2B5D10D800BBD070 /* ProcedureResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureResultView.swift; sourceTree = "<group>"; };
 		016A8BBE2B5D83B800BBD070 /* HospitalRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalRegion.swift; sourceTree = "<group>"; };
+		016A8BC02B5D8FFC00BBD070 /* InformationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				016A8BAE2B5C995800BBD070 /* IconText.swift */,
 				016A8BB32B5CB13000BBD070 /* SheetButton.swift */,
 				016A8BB92B5CE34C00BBD070 /* FilterButton.swift */,
+				016A8BC02B5D8FFC00BBD070 /* InformationLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				016A8BB22B5CA5E100BBD070 /* Hospital.swift in Sources */,
+				016A8BC12B5D8FFC00BBD070 /* InformationLabel.swift in Sources */,
 				016A8BB42B5CB13000BBD070 /* SheetButton.swift in Sources */,
 				016A8B9C2B5C81BA00BBD070 /* ContentView.swift in Sources */,
 				016A8BB82B5CB83B00BBD070 /* SpecialistSearchView.swift in Sources */,

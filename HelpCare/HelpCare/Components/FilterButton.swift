@@ -8,24 +8,72 @@
 import SwiftUI
 
 struct FilterButton: View {
-    @State var icon: String
-    @State var description: String
-    @Binding var selected: Bool
+    @State var specialist: String
+    
+    @State var casesWaiting: String
+    @State var fiftyPercentile: String?
+    @State var ninetyPercentile: String?
+    
     
     var body: some View {
-        VStack {
-            Image(systemName: icon)
-                .font(.title)
-                .foregroundColor(Color(selected ? .systemBlue : .systemGray).opacity(0.80))
-            Text(description)
-                .fontWeight(.medium)
-                .font(.callout)
-                .foregroundColor(Color(selected ? .systemBlue : .black))
-                .padding(.top, 4)
-                .padding([.leading, .trailing])
+        VStack(alignment: .leading){
+            Section{
+                HStack {
+                    Text(specialist)
+                        .fontWeight(.semibold)
+                        .padding(.leading)
+                        .padding(.bottom, 2)
+                        .font(.headline)
+                    Spacer()
+                    Text(casesWaiting)
+                        .fontWeight(.semibold)
+                    Text("cases pending")
+                        .fontWeight(.semibold)
+                        .padding(.trailing)
+                }
+                .padding(.top, 2)
+            }
+            
+            Section{
+                HStack {
+                    if(fiftyPercentile == "0.0"){
+                        Text("N/A")
+                            .padding(.leading)
+                            .fontWeight(.semibold)
+                    }
+                    else {
+                        Text(fiftyPercentile! + " " + "weeks")
+                            .padding(.leading)
+                            .fontWeight(.semibold)
+                    }
+                    Text("50% procedures completed")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                }
+            }
+            
+            Section{
+                HStack {
+                    if(ninetyPercentile == "0.0"){
+                        Text("N/A")
+                            .padding(.leading)
+                            .fontWeight(.semibold)
+                    }
+                    else {
+                        Text(ninetyPercentile! + " " + "weeks")
+                            .padding(.leading)
+                            .fontWeight(.semibold)
+                    }
+                    Text("90% procedures completed")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                }
+            }
         }
-        .frame(height: UIScreen.main.bounds.height / 6)
-        .frame(maxWidth: UIScreen.main.bounds.width / 2.5)
+        .frame(height: UIScreen.main.bounds.width / 3.5)
+        .frame(maxWidth: UIScreen.main.bounds.width / 1.1)
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
@@ -35,6 +83,6 @@ struct FilterButton: View {
 }
 struct FilterButton_Previews: PreviewProvider {
     static var previews: some View {
-        FilterButton(icon: "circle", description: "testing", selected: .constant(true))
+        FilterButton(specialist: "Richard Bell", casesWaiting: "6", fiftyPercentile: "5.3", ninetyPercentile: "12.4")
     }
 }
