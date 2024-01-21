@@ -68,7 +68,7 @@ struct ProcedureResultView: View {
                             .padding(.top)
                             .fontWeight(.semibold)
                         ForEach(hospital.specialists) { specialist in
-                            FilterButton(specialist: specialist.firstName + " " + specialist.lastName, casesWaiting: String(specialist.casesWaiting), fiftyPercentile: String(specialist.fiftyPercentile ?? 0), ninetyPercentile: String(specialist.ninetyPercentile ?? 0))
+                            FilterButton(specialist: specialist.firstName + " " + specialist.lastName, casesWaiting: specialist.casesWaiting < 5 ? "< 5" : String(specialist.casesWaiting), fiftyPercentile: String(specialist.fiftyPercentile ?? 0), ninetyPercentile: String(specialist.ninetyPercentile ?? 0))
                                 .padding()
                         }
                     }
@@ -93,7 +93,7 @@ struct ProcedureResultView: View {
                             .padding(.top)
                             .fontWeight(.semibold)
                         ForEach(hospital.specialists) { specialist in
-                            FilterButton(specialist: specialist.firstName + " " + specialist.lastName, casesWaiting: String(specialist.casesWaiting), fiftyPercentile: String(specialist.fiftyPercentile ?? 0), ninetyPercentile: String(specialist.ninetyPercentile ?? 0))
+                            FilterButton(specialist: specialist.firstName + " " + specialist.lastName, casesWaiting: specialist.casesWaiting < 5 ? "< 5" : String(specialist.casesWaiting), fiftyPercentile: String(specialist.fiftyPercentile ?? 0), ninetyPercentile: String(specialist.ninetyPercentile ?? 0))
                                 .padding()
                         }
                     }
