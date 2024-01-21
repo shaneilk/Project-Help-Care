@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct Hospital: Identifiable {
-    var name: String
-    var address: String
-    var status: Bool
-    
-    var id = UUID()
-}
-
 struct PersistentSheet: View {
     var sampleData = [Hospital(name: "Surrey Memorial Hospital", address: "13750 96 Ave, Surrey, BC V3V 1Z2", status: true),
                       Hospital(name: "hs2", address: "sample address", status: true),
