@@ -6,16 +6,26 @@
 //
 
 import SwiftUI
+import MapKit
+
+enum mapDefaults{
+    static let defaultLocation = CLLocationCoordinate2D(latitude: 49.261374, longitude: -123.246940)
+    static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+}
 
 struct ContentView: View {
+    @State private var defaultRegion = MKCoordinateRegion(center: mapDefaults.defaultLocation, span: mapDefaults.defaultSpan)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Map(coordinateRegion: $defaultRegion)
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                PersistentSheet()
+            }
+            .ignoresSafeArea()
         }
-        .padding()
     }
 }
 
