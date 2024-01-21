@@ -14,10 +14,15 @@ struct ProcedureView: View {
     @State var ageGroup = "Select.."
     @State private var editAgeGroup = false
     
-    @State var selectedBodyArea = "Select.."
+    @State var selectedBodyArea = "Head & Neck"
     @State private var editBodyArea = false
     
+    @State var selectedHeadArea = "Select.."
+    @State private var editSurgeryArea = false
+    
     let bodyAreas = ["Head & Neck", "Chest & Breast", "Arms, Shoulders & Hands", "Abdomen, Pelvic area, & Groin", "Leg, Hip, Knee & Foot"]
+    
+    let headAreas = ["Cranial Surgery", "Facial Bone Reconstruction", "Parotidectomy", "Sinus Surgery"]
     
     var body: some View {
         Form {
@@ -82,7 +87,39 @@ struct ProcedureView: View {
                 }
             }
             
-            if(ageGroup != "Select.." && selectedBodyArea != "Select.."){
+            if(selectedBodyArea == "Head & Neck"){
+                Section {
+                    VStack(alignment: .leading) {
+                        Text("Type of Surgery")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.secondary)
+                        HStack {
+                            Text(selectedHeadArea)
+                                .fontWeight(.bold)
+                                .font(.title3)
+                            Spacer()
+                            Image(systemName: "pencil")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.secondary)
+                                .padding(.bottom)
+                                .onTapGesture {
+                                    editSurgeryArea.toggle()
+                                }
+                        }
+                        if(editSurgeryArea){
+                            Picker("", selection: $selectedHeadArea){
+                                ForEach(headAreas, id:\.self){
+                                    Text($0)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                        }
+                    }
+                }                
+            }
+            
+            if(ageGroup != "Select.." && selectedBodyArea == "Head & Neck" && selectedHeadArea == "Facial Bone Reconstruction"){
                 Section {
                     NavigationLink {
                         ProcedureResultView()
