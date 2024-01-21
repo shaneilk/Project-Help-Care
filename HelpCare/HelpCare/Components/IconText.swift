@@ -13,7 +13,7 @@ struct IconText: View {
     
     var body: some View {
         HStack{
-            Image(systemName: status ? "checkmark.circle.fill" : "xmark.circle.fill")
+            Image(systemName: status ? "person.fill" : "person.3.sequence.fill")
                 .font(.title3)
                 .foregroundColor(status ? .green : .red)
                 .padding(.leading)
@@ -30,3 +30,6 @@ struct IconText_Previews: PreviewProvider {
         IconText(displayText: "hs2", status: true)
     }
 }
+
+// person.fill
+// person.3.fill

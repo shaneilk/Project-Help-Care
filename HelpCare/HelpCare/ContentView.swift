@@ -21,11 +21,11 @@ struct ContentView: View {
     @State var selectedHospital: Hospital?
     
     var sampleData = [Hospital(name: "Surrey Memorial Hospital", address: "13750 96 Ave, Surrey, BC V3V 1Z2", status: true, latitude: 49.176390, longitude: -122.842517),
-                      Hospital(name: "Vancouver General Hospital", address: "Jim Pattison Pavilion, 899 W 12th Ave, Vancouver, BC V5Z 1M9", status: true, latitude: 49.261400, longitude: -123.124731),
-                      Hospital(name: "St. Paul's Hospital", address: "1081 Burrard St, Vancouver, BC V6Z 1Y6", status: true, latitude: 49.280632, longitude: -123.130583),
+                      Hospital(name: "Vancouver General Hospital", address: "Jim Pattison Pavilion, 899 W 12th Ave, Vancouver, BC V5Z 1M9", status: false, latitude: 49.261400, longitude: -123.124731),
+                      Hospital(name: "St. Paul's Hospital", address: "1081 Burrard St, Vancouver, BC V6Z 1Y6", status: false, latitude: 49.280632, longitude: -123.130583),
                       Hospital(name: "Peace Arch Hospital", address: "15521 Russell Ave, White Rock, BC V4B 5M2", status: true, latitude: 49.030095, longitude: -122.794846),
                       Hospital(name: "Richmond Hospital", address: "7000 Westminster Hwy, Richmond, BC V6X 1A2", status: true, latitude: 49.168837, longitude: -123.149403),
-                      Hospital(name: "Langley Memorial Hospital", address: "22051 Fraser Hwy, Langley Twp, BC V3A 4H4", status: true, latitude: 49.095417, longitude: -122.615070)]
+                      Hospital(name: "Langley Memorial Hospital", address: "22051 Fraser Hwy, Langley Twp, BC V3A 4H4", status: false, latitude: 49.095417, longitude: -122.615070)]
     
     var body: some View {
         ZStack {
