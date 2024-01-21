@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Hospital: Identifiable {
+struct Hospital: Identifiable, Equatable {
     var name: String
     var address: String
     var status: Bool
-    var latitude: Double?
-    var longitude: Double?
+    var latitude: Double
+    var longitude: Double
     
     var id = UUID()
 }
